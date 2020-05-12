@@ -18,15 +18,26 @@ namespace Pavon.Brian
         public FrmNoDocente()
         {
             InitializeComponent();
+
+            //ESTO VA EN EL LOAD
+            //this.HabilitarHoras = false;
+            //this.ModificarTitulo = "Bienvenido al modulo de Alta del Personal No Docente";
+            ////this.BackColor = Color.BlueViolet;
+            //base.ModificarFondo(Color.BlueViolet);
+        }
+
+        private void FrmNoDocente_Load(object sender, EventArgs e)
+        {
             this.HabilitarHoras = false;
             this.ModificarTitulo = "Bienvenido al modulo de Alta del Personal No Docente";
             //this.BackColor = Color.BlueViolet;
             base.ModificarFondo(Color.BlueViolet);
         }
-        
+
+        #region Propiedades
 
         /// <summary>
-        /// 
+        /// Devuelve el no docente generado
         /// </summary>
         public Administrativo DevolverNoDocente
         {
@@ -36,8 +47,10 @@ namespace Pavon.Brian
             }
         }
 
+        #endregion
+
         /// <summary>
-        /// 
+        /// Luego de validar carga todos los datos para crear un no docente
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -58,8 +71,10 @@ namespace Pavon.Brian
         }
 
 
+        #region Metodos
+
         /// <summary>
-        /// 
+        /// De acuerdo al cargo que se haya elegido lo parsea al enumerado cargo
         /// </summary>
         /// <param name="cargo"></param>
         /// <returns></returns>
@@ -86,5 +101,10 @@ namespace Pavon.Brian
             }
             return auxCargo;
         }
+
+        #endregion
+
+
+
     }
 }

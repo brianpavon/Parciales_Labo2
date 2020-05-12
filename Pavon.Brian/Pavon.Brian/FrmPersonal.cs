@@ -18,8 +18,10 @@ namespace Pavon.Brian
             InitializeComponent();
         }
 
+        #region Propiedades
+
         /// <summary>
-        /// 
+        /// Propiedad que en case de necesitar habilita el combo box con los puestos
         /// </summary>
         public bool HabilitarCargo
         {
@@ -30,7 +32,7 @@ namespace Pavon.Brian
         }
 
         /// <summary>
-        /// 
+        /// Carga en el cmbCargo lo que necesite
         /// </summary>
         public string SoloDocente
         {
@@ -41,7 +43,7 @@ namespace Pavon.Brian
         }
 
         /// <summary>
-        /// 
+        /// En caso de ser no docente no necesita el campo valor por horas por lo tanto puedo no mostrarlo
         /// </summary>
         public bool HabilitarHoras
         {
@@ -53,7 +55,7 @@ namespace Pavon.Brian
         }
 
         /// <summary>
-        /// 
+        /// Modifica el titulo de acuerdo a quien use el form
         /// </summary>
         public string ModificarTitulo
         {
@@ -61,9 +63,10 @@ namespace Pavon.Brian
             {
                 this.lblTitulo.Text = value;
             }
-        }       
+        }
 
-       
-        
+        #endregion
+
+
     }
 }

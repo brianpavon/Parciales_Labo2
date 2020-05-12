@@ -19,7 +19,11 @@ namespace Entidades
             this.telefono = telefono;
         }
 
-        //PROPIEDADES:
+        #region PROPIEDADES:
+
+        /// <summary>
+        /// Setea o devuelve el parentezco
+        /// </summary>
         public EParentezco Parentezco
         {
             get 
@@ -32,12 +36,29 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Setea o devuelve el telefono
+        /// </summary>
         public string Telefono
         {
-            get { return this.telefono; }
-            set { this.telefono = value; }
+            get 
+            {
+                return this.telefono;
+            }
+            set 
+            {
+                this.telefono = value; 
+            }
         }
 
+        #endregion
+
+        #region Metodos
+
+        /// <summary>
+        /// Redefine el ToString cargando sus atributos
+        /// </summary>
+        /// <returns>Devuelve un string con sus datos</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -47,6 +68,7 @@ namespace Entidades
 
             return sb.ToString();
         }
+        #endregion
 
 
     }

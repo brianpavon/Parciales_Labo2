@@ -21,32 +21,81 @@ namespace Entidades
             
         }
 
-        //PROPIEDADES
+        #region PROPIEDADES
+
+        /// <summary>
+        /// Setea o devuelve el color de la sala
+        /// </summary>
         public EColores ColorSala
         {
-            get { return this.colorSala; }
-            set { this.colorSala = value; }
+            get 
+            {
+                return this.colorSala;
+            }
+            set
+            {
+                this.colorSala = value;
+            }
         }
 
+
+        /// <summary>
+        /// Setea o devuelve el legajo
+        /// </summary>
         public int Legajo
         {
-            get { return this.legajo; }
-            set { this.legajo = value; }
+            get 
+            {
+                return this.legajo; 
+            }
+            set 
+            {
+                this.legajo = value;
+            }
         }
 
+        /// <summary>
+        /// Setea o devuelve la cuota pagada del alumno
+        /// </summary>
         public float PrecioCuota
         {
-            get { return this.precioCuota; }
-            set { this.precioCuota = value; }
+            get 
+            {
+                return this.precioCuota;
+            }
+            set 
+            {
+                this.precioCuota = value; 
+            }
         }
 
+
+        /// <summary>
+        /// Setea o devuelve el Responsable del alumno
+        /// </summary>
         public Responsable Responsable
         {
-            get { return this.responsable; }
-            set { this.responsable = value; }
+            get 
+            {
+                return this.responsable;
+            }
+            set 
+            {
+                this.responsable = value; 
+            }
         }
 
-        //METODOS:
+        #endregion
+
+
+        #region METODOS:
+
+        /// <summary>
+        /// Si dos alumnos tienen el mismo legajo son iguales
+        /// </summary>
+        /// <param name="alumnoUno">Primer elemento a comparar</param>
+        /// <param name="alumnoDos">segundo elemento a comparar</param>
+        /// <returns>Devuelve true si lo son si no false</returns>
         public static bool operator == (Alumno alumnoUno, Alumno alumnoDos)
         {
             
@@ -58,16 +107,32 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Verifica que 2 alumnos sean distintos
+        /// </summary>
+        /// <param name="alumnoUno">Primer objeto a compaarar</param>
+        /// <param name="alumnoDos">Segundo objeto a comparar</param>
+        /// <returns>True si son distintos sino false</returns>
         public static bool operator != (Alumno alumnoUno,Alumno alumnoDos) 
         {
             return !(alumnoUno == alumnoDos);
         }
 
+
+        /// <summary>
+        /// Al castear devuelve el responsable del alumno
+        /// </summary>
+        /// <param name="alumno">El alumno a castear</param>
         public static implicit operator Responsable(Alumno alumno)
         {
             return alumno.Responsable;
         }
 
+
+        /// <summary>
+        /// Redifinicion del to string que hereda de la clase persona, mostrando todos sus atributos
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -80,5 +145,7 @@ namespace Entidades
             return sb.ToString();
             
         }
+
+        #endregion
     }
 }

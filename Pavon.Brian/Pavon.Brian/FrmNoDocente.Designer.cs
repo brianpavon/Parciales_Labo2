@@ -30,17 +30,9 @@
         {
             this.SuspendLayout();
             // 
-            // cmbHoraIngreso
-            // 
-            this.cmbHoraIngreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbHoraIngreso.Size = new System.Drawing.Size(189, 24);
-            this.cmbHoraIngreso.Text = "";
-            // 
             // cmbHoraSalida
             // 
-            this.cmbHoraSalida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHoraSalida.Size = new System.Drawing.Size(189, 24);
-            this.cmbHoraSalida.Text = "";
             // 
             // cmbCargo
             // 
@@ -49,6 +41,10 @@
             // lblTitulo
             // 
             this.lblTitulo.Location = new System.Drawing.Point(103, 9);
+            // 
+            // cmbHoraIngreso
+            // 
+            this.cmbHoraIngreso.Size = new System.Drawing.Size(189, 24);
             // 
             // btnAceptar
             // 
@@ -64,7 +60,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 562);
             this.Name = "FrmNoDocente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta Personal NO Docente";
+            this.Load += new System.EventHandler(this.FrmNoDocente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

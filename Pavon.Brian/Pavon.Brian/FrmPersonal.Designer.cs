@@ -204,6 +204,7 @@
             this.Controls.Add(this.lblValorHora);
             this.Controls.Add(this.lblHoraIngreso);
             this.Controls.Add(this.lblCargo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPersonal";
             this.Text = "FrmPersonal";
@@ -237,10 +238,10 @@
         protected System.Windows.Forms.Label lblHoraIngreso;
         protected System.Windows.Forms.Label lblValorHora;
         protected System.Windows.Forms.Label lblHoraSalida;
-        protected System.Windows.Forms.ComboBox cmbHoraIngreso;
         protected System.Windows.Forms.ComboBox cmbHoraSalida;
         protected System.Windows.Forms.ComboBox cmbCargo;
         protected System.Windows.Forms.TextBox txtValorHora;
         protected System.Windows.Forms.Label lblTitulo;
+        public System.Windows.Forms.ComboBox cmbHoraIngreso;
     }
 }

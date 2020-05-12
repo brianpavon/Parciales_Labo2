@@ -149,7 +149,9 @@
             this.Controls.Add(this.lblLegajo);
             this.Controls.Add(this.lblColorSala);
             this.Name = "FrmAlumno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de un Alumno";
+            this.Load += new System.EventHandler(this.FrmAlumno_Load);
             this.Controls.SetChildIndex(this.btnAceptar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.lblNombre, 0);

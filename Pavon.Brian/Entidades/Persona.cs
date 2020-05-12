@@ -30,32 +30,78 @@ namespace Entidades
             this.femenino = femenino;
         }
 
-        //PROPIEDADES:
+        #region PROPIEDADES:
 
+        /// <summary>
+        /// Setea o devuelve el apellido
+        /// </summary>
         public string Apellido
         {
-            get { return this.apellido; }
-            set { this.apellido = value; }
+            get 
+            {
+                return this.apellido;
+            }
+            set 
+            { 
+                this.apellido = value;
+            }
         }
 
+
+        /// <summary>
+        /// Setea o devuelve el dni
+        /// </summary>
         public int Dni
         {
-            get { return this.dni; }
-            set { this.dni = value; }
+            get 
+            {
+                return this.dni; 
+            }
+            set 
+            { 
+                this.dni = value;
+            }
         }
 
+
+        /// <summary>
+        /// Setea o devuelve el booleano en femenino, true si lo es
+        /// </summary>
         public bool Femenino
         {
-            get { return this.femenino; }
-            set { this.femenino = value; }
+            get 
+            {
+                return this.femenino;
+            }
+            set 
+            {
+                this.femenino = value;
+            }
         }
 
+
+        /// <summary>
+        /// Setea o devuelve el nombre
+        /// </summary>
         public string Nombre
         {
-            get { return this.nombre; }
-            set { this.nombre = value; }
+            get 
+            {
+                return this.nombre;
+            }
+            set 
+            {
+                this.nombre = value;
+            }
         }
 
+        #endregion
+
+        #region Metodos
+        /// <summary>
+        /// Redfine el metodo to string con sus atributos
+        /// </summary>
+        /// <returns>Devuelve un string con sus atributos</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -73,7 +119,9 @@ namespace Entidades
 
             return sb.ToString();
         }
-       
+
+        #endregion
+
 
 
     }

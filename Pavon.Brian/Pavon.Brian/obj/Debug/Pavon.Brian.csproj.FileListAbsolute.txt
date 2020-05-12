@@ -12,6 +12,7 @@ C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.FrmNoD
 C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.FrmPersona.resources
 C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.FrmPersonal.resources
 C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.FrmPrincipal.resources
+C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.FrmReportes.resources
 C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.FrmResponsable.resources
 C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.Properties.Resources.resources
 C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.csproj.GenerateResource.cache
@@ -19,3 +20,9 @@ C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.csproj
 C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.csproj.CopyComplete
 C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.exe
 C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.pdb
+C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.FrmVideo.resources
+C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\bin\Debug\Interop.WMPLib.dll
+C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Interop.WMPLib.dll
+C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\brian\source\repos\Pavon.Brian\Pavon.Brian\obj\Debug\Pavon.Brian.csproj.ResolveComReference.cache

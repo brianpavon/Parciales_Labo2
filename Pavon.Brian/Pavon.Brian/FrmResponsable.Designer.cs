@@ -130,6 +130,7 @@
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.cmbParentezco);
             this.Name = "FrmResponsable";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de un Responsable";
             this.Controls.SetChildIndex(this.btnAceptar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);

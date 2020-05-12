@@ -17,17 +17,23 @@ namespace Pavon.Brian
         int legajo;
         float valorCuota;
         //EColores colorSala;
+
         /// <summary>
-        /// 
+        /// Constructor por defecto
         /// </summary>
         public FrmAlumno()
         {
             InitializeComponent();
+            
+        }
+
+        private void FrmAlumno_Load(object sender, EventArgs e)
+        {
             base.ModificarFondo(Color.Pink);
         }
 
         /// <summary>
-        /// 
+        /// Chequea que todos los datos cargados esten ok y si es asi devuelve el alumno
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -63,6 +69,10 @@ namespace Pavon.Brian
             }
         }
 
+        #region Propiedades
+        /// <summary>
+        /// Propiedad que devuelve el alumno
+        /// </summary>
         public Alumno DevolverAlumno
         {
             get
@@ -71,8 +81,12 @@ namespace Pavon.Brian
             }
         }
 
+        #endregion
+
+
+        #region Metodos
         /// <summary>
-        /// 
+        /// De acuerdo al color de sala, se lo carga en la propiedad color aula del alumno
         /// </summary>
         /// <param name="strColor"></param>
         /// <returns></returns>
@@ -97,5 +111,7 @@ namespace Pavon.Brian
             }
             return colorSala;
         }
+        #endregion
+
     }
 }

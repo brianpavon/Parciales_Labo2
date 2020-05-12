@@ -20,19 +20,41 @@ namespace Entidades
             this.cargo = cargo;
         }
 
+        /// <summary>
+        /// Setea el sueldo en 30mil
+        /// </summary>
         static Administrativo()
         {
             salarioBase = 30000;
         }
 
+        #region Propiedades
         //PROPIEDADES
+
+        /// <summary>
+        /// Setea o devuelve elcargo
+        /// </summary>
         public ECargo Cargo
         {
-            get { return this.cargo; }
-            set { this.cargo = value; }
+            get 
+            {
+                return this.cargo;
+            }
+            set
+            {
+                this.cargo = value;
+            }
         }
 
+        #endregion
+
+        #region Metodos
+
         //METODO
+        /// <summary>
+        /// Redefine el calcular salario de acuerdo al cargo
+        /// </summary>
+        /// <returns></returns>
         public override double CalcularSalario()
         {
             double salarioTotal = 0;
@@ -62,6 +84,10 @@ namespace Entidades
             return salarioTotal;
         }
 
+        /// <summary>
+        /// Redefine el toString devolviendo sus atributos
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -71,6 +97,8 @@ namespace Entidades
 
             return sb.ToString();
         }
+
+        #endregion
 
     }
 }

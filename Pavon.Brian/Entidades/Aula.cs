@@ -23,7 +23,11 @@ namespace Entidades
             alumnos = new List<Alumno>();
         }
 
-        //PROPIEDADES:
+        #region PROPIEDADES:
+
+        /// <summary>
+        /// Devuelve o setea una lista de alumnos
+        /// </summary>
         public List<Alumno> Alumnos
         {
             get 
@@ -35,6 +39,10 @@ namespace Entidades
                 alumnos = value; 
             }
         }
+
+        /// <summary>
+        /// Devuelve o setea el enumerado color de sala
+        /// </summary>
         public EColores ColorSala
         {
             get 
@@ -46,6 +54,11 @@ namespace Entidades
                 this.colorSala = value; 
             }
         }
+
+
+        /// <summary>
+        /// Devuelve o setea el docente
+        /// </summary>
         public Docente Docente
         {
             get 
@@ -57,6 +70,10 @@ namespace Entidades
                 this.docente = value; 
             }
         }
+
+        /// <summary>
+        /// Devuelve o setea el turno del aula
+        /// </summary>
         public ETurno Turno
         {
             get 
@@ -69,24 +86,34 @@ namespace Entidades
             }
         }
 
-        //METODOS:
+        #endregion
 
+        #region METODOS:
+
+        /// <summary>
+        /// Agrega un alumno a su lista de alumnos, si corresponde con el mismo color de sala
+        /// </summary>
+        /// <param name="aula">Aula a la cual se cargar el alumno</param>
+        /// <param name="alumno">Alumno a cargar</param>
+        /// <returns>True si pudo agregar sino false</returns>
         public static bool operator +(Aula aula, Alumno alumno)
         {
             bool retorno = false;
-            if(aula.alumnos.Count > 0 && aula.alumnos.Count <= 30)
+            if (aula.alumnos.Count >= 0 && aula.alumnos.Count <= 30)
             {
-                foreach (Alumno aux in aula.alumnos)
-                {
-                    if(alumno.ColorSala == aula.ColorSala)
+                //foreach (Alumno aux in aula.alumnos)
+                ///{
+                    if (alumno.ColorSala == aula.ColorSala)
                     {
                         aula.alumnos.Add(alumno);
                         retorno = true;
                     }
-                    
-                }
+
+                //}
             }
             return retorno;
         }
+
+        #endregion
     }
 }

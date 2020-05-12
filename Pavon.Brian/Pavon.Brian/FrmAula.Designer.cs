@@ -47,7 +47,7 @@
             this.lbAlumnosAsignados.Location = new System.Drawing.Point(334, 107);
             this.lbAlumnosAsignados.Name = "lbAlumnosAsignados";
             this.lbAlumnosAsignados.Size = new System.Drawing.Size(209, 308);
-            this.lbAlumnosAsignados.TabIndex = 0;
+            this.lbAlumnosAsignados.TabIndex = 4;
             // 
             // lbAlumnosSinSala
             // 
@@ -56,7 +56,7 @@
             this.lbAlumnosSinSala.Location = new System.Drawing.Point(12, 107);
             this.lbAlumnosSinSala.Name = "lbAlumnosSinSala";
             this.lbAlumnosSinSala.Size = new System.Drawing.Size(206, 308);
-            this.lbAlumnosSinSala.TabIndex = 1;
+            this.lbAlumnosSinSala.TabIndex = 2;
             // 
             // lbDocentes
             // 
@@ -65,14 +65,14 @@
             this.lbDocentes.Location = new System.Drawing.Point(578, 107);
             this.lbDocentes.Name = "lbDocentes";
             this.lbDocentes.Size = new System.Drawing.Size(205, 308);
-            this.lbDocentes.TabIndex = 2;
+            this.lbDocentes.TabIndex = 5;
             // 
             // btnCrearSala
             // 
             this.btnCrearSala.Location = new System.Drawing.Point(433, 496);
             this.btnCrearSala.Name = "btnCrearSala";
             this.btnCrearSala.Size = new System.Drawing.Size(167, 41);
-            this.btnCrearSala.TabIndex = 3;
+            this.btnCrearSala.TabIndex = 6;
             this.btnCrearSala.Text = "Crear Sala";
             this.btnCrearSala.UseVisualStyleBackColor = true;
             this.btnCrearSala.Click += new System.EventHandler(this.btnCrearSala_Click);
@@ -87,7 +87,7 @@
             this.cmbTurno.Location = new System.Drawing.Point(234, 32);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(169, 24);
-            this.cmbTurno.TabIndex = 6;
+            this.cmbTurno.TabIndex = 0;
             // 
             // lblTurno
             // 
@@ -103,7 +103,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(632, 496);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(151, 41);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -113,7 +113,7 @@
             this.btnCargar.Location = new System.Drawing.Point(578, 33);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(205, 36);
-            this.btnCargar.TabIndex = 9;
+            this.btnCargar.TabIndex = 1;
             this.btnCargar.Text = "Cargar Lista";
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
@@ -123,9 +123,10 @@
             this.btnAsignar.Location = new System.Drawing.Point(232, 217);
             this.btnAsignar.Name = "btnAsignar";
             this.btnAsignar.Size = new System.Drawing.Size(85, 36);
-            this.btnAsignar.TabIndex = 10;
+            this.btnAsignar.TabIndex = 3;
             this.btnAsignar.Text = "Asignar";
             this.btnAsignar.UseVisualStyleBackColor = true;
+            this.btnAsignar.Click += new System.EventHandler(this.btnAsignar_Click);
             // 
             // FrmAula
             // 
@@ -143,7 +144,9 @@
             this.Controls.Add(this.lbAlumnosAsignados);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAula";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Aula";
+            this.Load += new System.EventHandler(this.FrmAula_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

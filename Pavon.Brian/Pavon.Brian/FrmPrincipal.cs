@@ -18,20 +18,102 @@ namespace Pavon.Brian
         /// <summary>
         /// Atributos del FormPrincipal
         /// </summary>
-        static List<Alumno> listaAlumnos;        
-        static List<Docente> listaDocentes;
+
+        //no habia utilizado getter y setter
+        //static List<Alumno> listaAlumnos;        
+        //static List<Docente> listaDocentes;
+        //public static List<Alumno> listaAlumnos;
+        List<Alumno> listaAlumnos;
+        List<Docente> listaDocentes;
+        //List<Alumno> listaRoja;
         List<Administrativo> listaNoDocentes;
         List<Responsable> listaResponsables;
+        List<Aula> listaAulas;        
 
         public FrmPrincipal()
         {
             InitializeComponent();
+            //listaAlumnos = new List<Alumno>();
+
+        }
+
+        #region Propiedades
+
+        /// <summary>
+        /// Propiedad que setea o devuelve un lista de aulas
+        /// </summary>
+        public List<Aula> ListaAulas
+        {
+            get
+            {
+                return this.listaAulas;
+            }
+            set
+            {
+                this.listaAulas = value;
+            }
+        }
+        /// <summary>
+        /// Propiedad que setea o devuelve una lista de alumnos
+        /// </summary>
+        public List<Alumno> ListaAlumnos
+        {
+            get
+            {
+                return this.listaAlumnos;
+            }
+            set
+            {
+                this.listaAlumnos = value;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad que setea o devuelve una lista de docentes
+        /// </summary>
+        public List<Docente> ListaDocentes
+        {
+            get
+            {
+                return this.listaDocentes;
+            }
+            set
+            {
+                this.listaDocentes = value;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad que setea o devuelva una lista de los no docentes
+        /// </summary>
+        public List<Administrativo> ListaNoDocente
+        {
+            get
+            {
+                return this.listaNoDocentes;
+            }
+            set
+            {
+                this.listaNoDocentes = value;
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// Carga algunos atributos mientras abre el form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
             lblSaludo.Text = this.Saludar();
             listaAlumnos = new List<Alumno>();
             listaDocentes = new List<Docente>();
             listaNoDocentes = new List<Administrativo>();
             listaResponsables = new List<Responsable>();
+            listaAulas = new List<Aula>();
         }
+
 
         /// <summary>
         /// Funcion asignada a la opcion Salir de la barra de menu, cierra toda la aplicacion
@@ -135,11 +217,15 @@ namespace Pavon.Brian
         {
             FrmAula altaAulaAmarilla = new FrmAula();
             altaAulaAmarilla.CambiarFondo(Color.Yellow);
+            //le paso el color
             altaAulaAmarilla.Color = EColores.Amarillo;
+            altaAulaAmarilla.ListaDocentes = listaDocentes;
+            altaAulaAmarilla.ListaAlumnos = listaAlumnos;
             altaAulaAmarilla.ShowDialog();            
             if (altaAulaAmarilla.DialogResult == DialogResult.OK)
             {
                 this.AltaExitosa();
+                listaAulas.Add(altaAulaAmarilla.DevolverAula);
             }
             else
             {
@@ -156,10 +242,13 @@ namespace Pavon.Brian
             FrmAula altaAulaRoja = new FrmAula();
             altaAulaRoja.CambiarFondo(Color.Red);
             altaAulaRoja.Color = EColores.Rojo;
+            altaAulaRoja.ListaDocentes = listaDocentes;
+            altaAulaRoja.ListaAlumnos = listaAlumnos;
             altaAulaRoja.ShowDialog();
             if (altaAulaRoja.DialogResult == DialogResult.OK)
             {
                 this.AltaExitosa();
+                listaAulas.Add(altaAulaRoja.DevolverAula);
             }
             else
             {
@@ -176,10 +265,13 @@ namespace Pavon.Brian
             FrmAula altaAulaVerde = new FrmAula();
             altaAulaVerde.CambiarFondo(Color.Green);
             altaAulaVerde.Color = EColores.Verde;
+            altaAulaVerde.ListaDocentes = listaDocentes;
+            altaAulaVerde.ListaAlumnos = listaAlumnos;
             altaAulaVerde.ShowDialog();
             if (altaAulaVerde.DialogResult == DialogResult.OK)
             {
                 this.AltaExitosa();
+                listaAulas.Add(altaAulaVerde.DevolverAula);
             }
             else
             {
@@ -196,10 +288,13 @@ namespace Pavon.Brian
             FrmAula altaAulaNaranja = new FrmAula();
             altaAulaNaranja.CambiarFondo(Color.Orange);
             altaAulaNaranja.Color = EColores.Naranja;
+            altaAulaNaranja.ListaDocentes = listaDocentes;
+            altaAulaNaranja.ListaAlumnos = listaAlumnos;
             altaAulaNaranja.ShowDialog();
             if (altaAulaNaranja.DialogResult == DialogResult.OK)
             {
                 this.AltaExitosa();
+                listaAulas.Add(altaAulaNaranja.DevolverAula);
             }
             else
             {
@@ -368,6 +463,7 @@ namespace Pavon.Brian
             alumno48.ColorSala = EColores.Verde;
             alumno49.ColorSala = EColores.Verde;
             alumno50.ColorSala = EColores.Verde;
+            
 
             Responsable responsable1 = new Responsable("Ottilie","Tunuy",53979186,true,EParentezco.Madre,"3567920693");
             Responsable responsable2 = new Responsable("Gert","Charley",46414920,true,EParentezco.Tia,"9455961838");
@@ -470,6 +566,87 @@ namespace Pavon.Brian
             alumno48.Responsable = responsable3;
             alumno49.Responsable = responsable2;
             alumno50.Responsable = responsable1;
+
+            listaAlumnos.Add(alumno1);
+            listaAlumnos.Add(alumno2);
+            listaAlumnos.Add(alumno3);
+            listaAlumnos.Add(alumno4);
+            listaAlumnos.Add(alumno5);
+            listaAlumnos.Add(alumno6);
+            listaAlumnos.Add(alumno7);
+            listaAlumnos.Add(alumno8);
+            listaAlumnos.Add(alumno9);
+            listaAlumnos.Add(alumno10);
+            listaAlumnos.Add(alumno11);
+            listaAlumnos.Add(alumno12);
+            listaAlumnos.Add(alumno13);
+            listaAlumnos.Add(alumno14);
+            listaAlumnos.Add(alumno15);
+            listaAlumnos.Add(alumno16);
+            listaAlumnos.Add(alumno17);
+            listaAlumnos.Add(alumno18);
+            listaAlumnos.Add(alumno19);
+            listaAlumnos.Add(alumno20);
+            listaAlumnos.Add(alumno21);
+            listaAlumnos.Add(alumno22);
+            listaAlumnos.Add(alumno23);
+            listaAlumnos.Add(alumno24);
+            listaAlumnos.Add(alumno25);
+            listaAlumnos.Add(alumno26);
+            listaAlumnos.Add(alumno27);
+            listaAlumnos.Add(alumno28);
+            listaAlumnos.Add(alumno29);
+            listaAlumnos.Add(alumno30);
+            listaAlumnos.Add(alumno31);
+            listaAlumnos.Add(alumno32);
+            listaAlumnos.Add(alumno33);
+            listaAlumnos.Add(alumno34);
+            listaAlumnos.Add(alumno35);
+            listaAlumnos.Add(alumno36);
+            listaAlumnos.Add(alumno37);
+            listaAlumnos.Add(alumno38);
+            listaAlumnos.Add(alumno39);
+            listaAlumnos.Add(alumno40);
+            listaAlumnos.Add(alumno41);
+            listaAlumnos.Add(alumno42);
+            listaAlumnos.Add(alumno43);
+            listaAlumnos.Add(alumno44);
+            listaAlumnos.Add(alumno45);
+            listaAlumnos.Add(alumno46);
+            listaAlumnos.Add(alumno47);
+            listaAlumnos.Add(alumno48);
+            listaAlumnos.Add(alumno49);
+            listaAlumnos.Add(alumno50);
+
+            #region Harcodeo Docentes y aulas para probar los reportes
+
+            Docente docente1 = new Docente("Farlee", "Cotterell", 39570044, false, DateTime.Parse("08:00"), DateTime.Parse("12:00"), 152);
+            Docente docente2 = new Docente("Fredric", "Wittman", 48665081, false, DateTime.Parse("08:00"), DateTime.Parse("12:00"), 209);
+            Docente docente3 = new Docente("Wallie", "Syseland", 27492878, true, DateTime.Parse("13:00"), DateTime.Parse("17:00"), 127);
+            Docente docente4 = new Docente("Liliane", "Blowin", 21041114, true, DateTime.Parse("13:00"), DateTime.Parse("17:00"), 201);
+            Docente docente5 = new Docente("Danit", "Reading", 16371068, true, DateTime.Parse("13:00"), DateTime.Parse("17:00"), 138);
+
+            Aula aulaRojaMañana = new Aula(EColores.Rojo, ETurno.Mañana, docente1);
+            Aula aulaAmarilloTarde = new Aula(EColores.Amarillo, ETurno.Tarde, docente5);
+            Aula aulaVerdeTarde = new Aula(EColores.Verde, ETurno.Tarde, docente4);
+            Aula aulaNaranjaMañana = new Aula(EColores.Amarillo, ETurno.Mañana, docente2);
+
+            if (aulaRojaMañana + alumno1) ;
+
+            if (aulaRojaMañana + alumno2) ;
+
+            if (aulaRojaMañana + alumno3) ;
+
+            if (aulaAmarilloTarde + alumno31) ;
+            if (aulaAmarilloTarde + alumno32) ;
+            if (aulaAmarilloTarde + alumno33) ;
+
+            listaAulas.Add(aulaRojaMañana);
+            listaAulas.Add(aulaAmarilloTarde);
+            #endregion
+            this.cargarAlumno.Visible = false;
+            this.AltaExitosa();
+            
             #endregion
         }
         
@@ -486,8 +663,30 @@ namespace Pavon.Brian
             Docente docente3 = new Docente("Wallie","Syseland",27492878,true, DateTime.Parse("13:00"), DateTime.Parse("17:00"), 127);
             Docente docente4 = new Docente("Liliane","Blowin",21041114,true, DateTime.Parse("13:00"), DateTime.Parse("17:00"), 201);
             Docente docente5 = new Docente("Danit","Reading",16371068,true,DateTime.Parse("13:00"), DateTime.Parse("17:00"), 138);
-                      
 
+            listaDocentes.Add(docente1);
+            listaDocentes.Add(docente2);
+            listaDocentes.Add(docente3);
+            listaDocentes.Add(docente4);
+            listaDocentes.Add(docente5);
+
+            //NOSE LA VERDAD QUE FLASHE
+            //foreach (Docente docente in ListaDocentes)
+            //{
+            //    listaDocentes.Add(docente);
+            //}
+
+            //Harcodeo aulas:
+            Aula aulaRojaMañana = new Aula(EColores.Rojo, ETurno.Mañana, docente1);
+            Aula aulaAmarilloTarde = new Aula(EColores.Amarillo, ETurno.Tarde, docente5);
+            Aula aulaVerdeTarde = new Aula(EColores.Verde, ETurno.Tarde, docente4);
+            Aula aulaNaranjaMañana = new Aula(EColores.Amarillo, ETurno.Mañana, docente2);
+            //listaAulas.Add(aulaRojaMañana);
+            //listaAulas.Add(aulaAmarilloTarde);
+            listaAulas.Add(aulaVerdeTarde);
+            listaAulas.Add(aulaNaranjaMañana);
+            this.cargarDocentesToolStripMenuItem.Visible = false;
+            this.AltaExitosa();
             #endregion
         }
 
@@ -500,24 +699,176 @@ namespace Pavon.Brian
         private void cargarNoDocenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             #region Harcodeo de los Administrativos
-            Administrativo administrativo1 = new Administrativo("Gerri","Markovich",15073372,false,12,14,Senior Quality Engineer);
-            Administrativo administrativo2 = new Administrativo("Berti","Inchcomb",24554231,false,8,15,Research Associate);
-            Administrativo administrativo3 = new Administrativo("Ronny","Gyenes",28501194,false,12,13,VP Sales);
-            Administrativo administrativo4 = new Administrativo("Chauncey","Setch",33181208,false,11,15,Financial Analyst);
-            Administrativo administrativo5 = new Administrativo("Inger","Iremonger",35003048,false,9,14,Community Outreach Specialist);
-            Administrativo administrativo6 = new Administrativo("Marci","Hansie",44365351,true,8,14,Software Consultant);
-            Administrativo administrativo7 = new Administrativo("Jayme","O'Luney",4690442,true,9,13,Junior Executive);
-            Administrativo administrativo8 = new Administrativo("Thelma","MacGiffin",7465179,true,13,16,Food Chemist);
-            Administrativo administrativo9 = new Administrativo("Delcine","Delle",52591827,true,8,14,Cost Accountant);
-            Administrativo administrativo10 = new Administrativo("Cindie","Leif",52421110,true,10,15,Paralegal);
+            Administrativo administrativo1 = new Administrativo("Gerri","Markovich",15073372,false, DateTime.Parse("07:30"), DateTime.Parse("13:00"), ECargo.Porteria);
+            Administrativo administrativo2 = new Administrativo("Berti","Inchcomb",24554231,false, DateTime.Parse("08:00"), DateTime.Parse("16:00"), ECargo.Cocina);
+            Administrativo administrativo3 = new Administrativo("Ronny","Gyenes",28501194,false, DateTime.Parse("09:00"), DateTime.Parse("18:00"), ECargo.Tesoreria);
+            Administrativo administrativo4 = new Administrativo("Chauncey","Setch",33181208,false, DateTime.Parse("07:30"), DateTime.Parse("16:30"), ECargo.Direccion);
+            Administrativo administrativo5 = new Administrativo("Inger","Iremonger",35003048,false, DateTime.Parse("13:00"), DateTime.Parse("18:00"), ECargo.Porteria);
+            Administrativo administrativo6 = new Administrativo("Marci","Hansie",44365351,true, DateTime.Parse("13:00"), DateTime.Parse("19:00"), ECargo.Cocina);
+            Administrativo administrativo7 = new Administrativo("Jayme","O'Luney",4690442,true, DateTime.Parse("10:00"), DateTime.Parse("19:00"), ECargo.Tesoreria);
+            Administrativo administrativo8 = new Administrativo("Thelma","MacGiffin",7465179,true, DateTime.Parse("12:00"), DateTime.Parse("20:00"), ECargo.Direccion);
+            Administrativo administrativo9 = new Administrativo("Delcine","Delle",52591827,true, DateTime.Parse("10:00"), DateTime.Parse("18:00"), ECargo.Porteria);
+            Administrativo administrativo10 = new Administrativo("Cindie","Leif",52421110,true, DateTime.Parse("16:00"), DateTime.Parse("20:00"), ECargo.Tesoreria);
 
-
+            listaNoDocentes.Add(administrativo1);
+            listaNoDocentes.Add(administrativo2);
+            listaNoDocentes.Add(administrativo3);
+            listaNoDocentes.Add(administrativo4);
+            listaNoDocentes.Add(administrativo5);
+            listaNoDocentes.Add(administrativo6);
+            listaNoDocentes.Add(administrativo7);
+            listaNoDocentes.Add(administrativo8);
+            listaNoDocentes.Add(administrativo9);
+            listaNoDocentes.Add(administrativo10);
+            this.cargarNoDocenteToolStripMenuItem.Visible = false;
+            this.AltaExitosa();
             #endregion
 
         }
 
+
+        /// <summary>
+        /// Muestra un listado con la recaudacion por sala
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void recaudacionPorAulaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReportes recaudacionPorAula = new FrmReportes();
+            recaudacionPorAula.ListaAulas = this.listaAulas;
+            recaudacionPorAula.SetearTituloForm = "Recaudacion por Aula";
+            recaudacionPorAula.SetearTituloForm = "Esta visualizando lo recaudado por Aula";
+            recaudacionPorAula.HabilitarParaPadres = false;
+            recaudacionPorAula.CambiarFondo(Color.Aqua);
+            recaudacionPorAula.RecaudacionPorSala();
+            recaudacionPorAula.ShowDialog();
+
+        }
+
+        /// <summary>
+        /// Muestra un listado con el sueldo de todos los docentes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void sueldoDocenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReportes reporteDocente = new FrmReportes();
+            reporteDocente.SetearTituloForm = "Reporte del Sueldo Docente";
+            reporteDocente.SetearMensajeReporte = "Esta visualizando los Sueldos Docentes";
+            reporteDocente.HabilitarParaPadres = false;
+            reporteDocente.ListaDocentes = this.listaDocentes;
+            reporteDocente.CambiarFondo(Color.Salmon);
+            reporteDocente.MostrarSueldoDocente();
+            reporteDocente.ShowDialog();
+        }
+
+        /// <summary>
+        /// Muestra el telefono de los responsables de los niños de un aula
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void informacionPadresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FrmReportes reportePadres = new FrmReportes();
+            reportePadres.SetearMensajeReporte = "Telefonos de Responsable por Sala";
+            reportePadres.SetearTituloForm = "Telefonos";
+            reportePadres.HabilitarParaPadres = true;
+            reportePadres.CambiarFondo(Color.Cyan);
+            reportePadres.ListaAulas = this.listaAulas;
+            reportePadres.ShowDialog();
+
+
+        }
+
+        /// <summary>
+        /// Muestro un listado con los sueldos del personal NoDocente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void sueldoNoDocenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReportes reporteNoDocente = new FrmReportes();
+            reporteNoDocente.SetearMensajeReporte = "Esta visualizando los Sueldos";
+            reporteNoDocente.SetearTituloForm = "Reporte del Sueldo No Docente";
+            reporteNoDocente.HabilitarParaPadres = false;
+            reporteNoDocente.CambiarFondo(Color.GreenYellow);
+            reporteNoDocente.ListaNoDocente = this.listaNoDocentes;
+            reporteNoDocente.MostrarSueldoNoDocente();
+            reporteNoDocente.ShowDialog();
+        }
+
+        /// <summary>
+        /// Muestro la recaudacion total del jardin
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void recaudacionTotalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReportes reporteTotalJardin = new FrmReportes();
+            reporteTotalJardin.ListaAulas = this.listaAulas;
+            reporteTotalJardin.SetearTituloForm = "Recaudacion Total";
+            reporteTotalJardin.SetearMensajeReporte = "El total recaudado es: ";
+            reporteTotalJardin.HabilitarParaPadres = false;
+            reporteTotalJardin.CambiarFondo(Color.LightSkyBlue);
+            reporteTotalJardin.RecaudacionTotal();
+            reporteTotalJardin.ShowDialog();
+
+        }
+
+        /// <summary>
+        /// Abre un form donde estan los videos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void verToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVideo frmVideo = new FrmVideo();
+
+            //quise hacer el video en el container pero no me queda bien
+            //frmVideo.MdiParent = this;
+            //this.splitContainer1.Panel2.Controls.Add(frmVideo);
+            frmVideo.ShowDialog();
+            if (frmVideo.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show("Gracias por ver los videos", "Salir", MessageBoxButtons.OK);
+            }
+
+        }
+
+        //quise devolver un docente, despues me avive que los puedo ir cargando en listas en el harcodeo
+        //public Docente AsignarDocente
+        //{
+        //    get
+        //    {
+        //        return this.docente;
+        //    }
+        //}
+
+
+
         #region MetodosDelFormPrincipal
         //METODOS:
+
+
+        /// <summary>
+        /// Harcodear aulas, pero no lo probe y no se si esta bien, desisti de esto
+        /// </summary>
+        /// <param name="aula"></param>
+        /// <param name="alumno"></param>
+        //public void HarcodearAulas(Aula aula, Alumno alumno)
+        //{
+        //    foreach (Aula auxAula in listaAulas)
+        //    {
+        //        foreach (Alumno auxAlumno in auxAula.Alumnos)
+        //        {
+        //            if (aula + alumno)
+        //            { }
+
+        //        }
+        //    }
+        //}
+
 
         /// <summary>
         /// 
@@ -543,25 +894,19 @@ namespace Pavon.Brian
 
             return sb.ToString();
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        public static List<Docente> ListaDocentes
-        {
-            get
-            {
-                return listaDocentes;
-            }
-        }
 
+        
+
+        /*primero hice estatico porque no se me ocurrio usar setters solo getters
         public static List<Alumno> ListaAlumnos
         {
             get
             {
                 return listaAlumnos;
             }
-        }
+        }*/
         #endregion
 
+        
     }
 }

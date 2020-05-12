@@ -60,7 +60,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 567);
             this.Name = "FrmDocente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta Personal Docente";
+            this.Load += new System.EventHandler(this.FrmDocente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

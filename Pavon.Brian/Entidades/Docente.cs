@@ -18,7 +18,12 @@ namespace Entidades
 
         }
 
-        //PROPIEDADES:
+
+        #region PROPIEDADES:
+
+        /// <summary>
+        /// Setea y devuelve las horas mensuales del docente
+        /// </summary>
         public int HorasMensuales
         {
             get 
@@ -31,27 +36,49 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Setea o devuelve el valor de la hora del docente
+        /// </summary>
         public double ValorHora
         {
-            get { return this.valorHora; }
-            set { this.valorHora = value; }
+            get
+            { 
+                return this.valorHora; 
+            }
+            set 
+            {
+                this.valorHora = value;
+            }
         }
 
-        //METODOS:
+        #endregion
 
+        #region METODOS:
+
+        /// <summary>
+        /// Redefine metodo calcular salario por ser docente
+        /// </summary>
+        /// <returns>Devuelve el salario</returns>
         public override double CalcularSalario()
         {
             double salarioMensual;
             return salarioMensual = valorHora * HorasMensuales;           
         }
 
+        /// <summary>
+        /// Reefinicion del Tostring donde mostrara todos sus atributos
+        /// </summary>
+        /// <returns>Retorna un string con sus datos</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.ToString());
             sb.AppendLine($"Horas mensuales: {this.HorasMensuales}");
+
             
             return sb.ToString();
         }
+
+        #endregion
     }
 }

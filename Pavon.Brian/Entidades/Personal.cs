@@ -26,36 +26,74 @@ namespace Entidades
             this.horaSalida = horaSalida;
         }
 
-        //PROPIEDADES
+        #region PROPIEDADES
+
+        /// <summary>
+        /// Setea o devuelve la hora de entrada
+        /// </summary>
         public DateTime HoraEntrada
         {
-            get { return this.horaEntrada; }
-            set { this.horaEntrada = value; }
+            get 
+            {
+                return this.horaEntrada; 
+            }
+            set
+            {
+                this.horaEntrada = value;
+            }
         }
 
+
+        /// <summary>
+        /// Setea o devuelve la hora de salida
+        /// </summary>
         public DateTime HoraSalida
         {
-            get { return this.horaSalida; }
-            set { this.horaSalida = value; }
+            get 
+            {
+                return this.horaSalida; 
+            }
+            set
+            {
+                this.horaSalida = value;
+            }
         }
 
+        /// <summary>
+        /// Devuelve el salario
+        /// </summary>
         public double Salario
         {
             get { return CalcularSalario(); }
         }
 
+        #endregion
+
+
+        #region Metodos
+
+        /// <summary>
+        /// Metodo que implementaran las clases que la hereden
+        /// </summary>
+        /// <returns>Devolvera el salario de acuerdo a su tipoo cargo</returns>
         public abstract double CalcularSalario();
 
+        /// <summary>
+        /// Redefine el tostring con sus atributos
+        /// </summary>
+        /// <returns>Devuelve un string con sus atributos</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.ToString());
             sb.AppendLine($"Hora entrada: {this.horaEntrada}");
             sb.AppendLine($"Hora salida: {this.horaSalida}");
+            sb.AppendLine($"Salario: {this.CalcularSalario().ToString()}");
 
             return sb.ToString();
         }
 
+        #endregion
 
     }
 }
