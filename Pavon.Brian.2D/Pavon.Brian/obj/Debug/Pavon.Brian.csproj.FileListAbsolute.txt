@@ -1,0 +1,15 @@
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\bin\Debug\Pavon.Brian.exe.config
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\bin\Debug\Pavon.Brian.exe
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\bin\Debug\Pavon.Brian.pdb
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\bin\Debug\Entidades.dll
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\bin\Debug\Entidades.pdb
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\obj\Debug\Pavon.Brian.csprojAssemblyReference.cache
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\obj\Debug\Pavon.Brian.Properties.Resources.resources
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\obj\Debug\Pavon.Brian.csproj.GenerateResource.cache
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\obj\Debug\Pavon.Brian.csproj.CoreCompileInputs.cache
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\obj\Debug\Pavon.Brian.csproj.CopyComplete
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\obj\Debug\Pavon.Brian.exe
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\obj\Debug\Pavon.Brian.pdb
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\obj\Debug\Pavon.Brian.FrmEvaluacion.resources
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\obj\Debug\Pavon.Brian.FrmJardinUtn.resources
+C:\Users\brian\Desktop\Parcial_2_2020\Pavon.Brian.2D\Pavon.Brian\obj\Debug\Pavon.Brian.FrmProximoLlamado.resources
